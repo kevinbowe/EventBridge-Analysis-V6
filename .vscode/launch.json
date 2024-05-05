@@ -1,0 +1,74 @@
+{
+	"configurations": [
+		{
+			"type": "aws-sam",
+			"request": "direct-invoke",
+			"name": "HelloWorldFunction (nodejs20.x)",
+			"invokeTarget": {
+				"target": "template",
+				"templatePath": "${workspaceFolder}/template.yaml",
+				"logicalId": "HelloWorldFunction"
+			},
+			"lambda": {
+				"payload": {},
+				"environmentVariables": {},
+				"runtime": "nodejs20.x"
+			}
+		},
+		{
+			"type": "aws-sam",
+			"request": "direct-invoke",
+			"name": "HelloWorldFunctionCopy (nodejs20.x)",
+			"invokeTarget": {
+				"target": "template",
+				"templatePath": "${workspaceFolder}/template.yaml",
+				"logicalId": "HelloWorldFunctionCopy"
+			},
+			"lambda": {
+				"payload": {},
+				"environmentVariables": {},
+				"runtime": "nodejs20.x"
+			}
+		},
+		{
+			"type": "aws-sam",
+			"request": "direct-invoke",
+			"name": "API HelloWorldFunction (nodejs20.x)",
+			"invokeTarget": {
+				"target": "api",
+				"templatePath": "${workspaceFolder}/template.yaml",
+				"logicalId": "HelloWorldFunction"
+			},
+			"api": {
+				"path": "/hello",
+				"httpMethod": "get",
+				"payload": {
+					"json": {}
+				}
+			},
+			"lambda": {
+				"runtime": "nodejs20.x"
+			}
+		},
+		{
+			"type": "aws-sam",
+			"request": "direct-invoke",
+			"name": "API HelloWorldFunctionCopy (nodejs20.x)",
+			"invokeTarget": {
+				"target": "api",
+				"templatePath": "${workspaceFolder}/template.yaml",
+				"logicalId": "HelloWorldFunctionCopy"
+			},
+			"api": {
+				"path": "/hello-copy",
+				"httpMethod": "get",
+				"payload": {
+					"json": {}
+				}
+			},
+			"lambda": {
+				"runtime": "nodejs20.x"
+			}
+		}
+	]
+}
